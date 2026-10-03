@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-orbitron {
+    font-family: var(--font-orbitron), system-ui, sans-serif;
+  }
+}
+
+:root {
+  --background: #050509;
+  --foreground: #f8fafc;
+  --accent-cyan: #00f2fe;
+  --accent-magenta: #ff007f;
+  --accent-gold: #ffb703;
+}
+
+body {
+  background-color: #050509;
+  color: #f8fafc;
+  overflow-x: hidden;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050509;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2fe;
+}
+
+/* Futuristic Grid Background */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.perspective-grid {
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: 50% 100%;
+}
+
+/* Glassmorphism card */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 242, 254, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 242, 254, 0.15);
+}
+
+/* Text Glow Effects */
+.glow-text {
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.5), 0 0 40px rgba(0, 242, 254, 0.2);
+}
+
+.glow-text-gold {
+  text-shadow: 0 0 20px rgba(255, 183, 3, 0.5), 0 0 40px rgba(255, 183, 3, 0.2);
+}
+
+/* Scanline Animation */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.scanline {
+  animation: scanline 8s linear infinite;
+}
+
+/* Headlight flare animation */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.pulse-flare {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
